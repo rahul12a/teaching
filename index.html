@@ -4,56 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SRM University Sonipat</title>
+    <title>Random Image Viewer</title>
     <style>
-        /* CSS styles */
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
         }
 
-        header {
-            background-color: #333;
-            color: #fff;
+        #imageContainer {
+            width: 80%;
+            max-width: 500px;
+            height: auto;
             padding: 20px;
-            text-align: center;
-        }
-
-        section {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 800px;
             margin: auto;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            background-color: #fff;
         }
 
-        .btn {
-            display: inline-block;
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #555;
+        #randomImage {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
         }
     </style>
-    <script>
-        // JavaScript
-        function displayMessage() {
-            alert("Welcome to SRM University Sonipat!");
-        }
-    </script>
 </head>
 
 <body>
+<<<<<<< Updated upstream
     <header>
         <h1>Welcome to SRM University Sonipat, NCR</h1>
     </header>
@@ -64,6 +49,29 @@
             <a href="#" class="btn" onclick="displayMessage()">Learn More</a>
         </div>
     </section>
+=======
+    <div id="imageContainer">
+        <img id="randomImage" src="" alt="Random Image">
+    </div>
+
+    <script>
+        function getRandomImage() {
+            var imageElement = document.getElementById("randomImage");
+
+            // Construct the URL with timestamp to avoid caching
+            var imageUrl = "https://source.unsplash.com/random/"
+
+            // Set the src attribute of the image element to the new URL
+            imageElement.src = imageUrl;
+        }
+
+        // Call getRandomImage initially to display the first image
+        getRandomImage();
+
+        // Set interval to change image every 5 seconds
+        setInterval(getRandomImage, 2000);
+    </script>
+>>>>>>> Stashed changes
 </body>
 
 </html>
